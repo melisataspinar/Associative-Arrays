@@ -1,0 +1,55 @@
+// 1. initialization
+console.log('1. Initialization -------------------------------');
+const array1 = new Map([
+  ["name", "Melisa"],
+  ["department", "CS"],
+  ["ID", 21803668]
+]);
+console.log(array1);
+
+// 2. getting the value for a key
+console.log('2. Getting value of key -------------------------');
+console.log( array1.get('name') );
+
+// 3. adding an element
+console.log('3. Adding an element ----------------------------');
+console.log( array1 );
+array1.set('age',21);
+console.log( array1 );
+
+// 4. removing an element
+console.log('4. Removing an element --------------------------');
+console.log( array1 );
+array1.delete('department');
+console.log( array1 );
+
+// 5. modifying existing element\'s value
+console.log('5. Modifying existing element\'s value -----------');
+console.log( array1 );
+array1.set('age',22);
+console.log( array1 );
+
+// 6. searching for existence of a key
+console.log('6. Searching for existence of a key -------------');
+console.log( array1.has('name') );
+console.log( array1.has('surname') );
+
+// 7. searching for existence of a value
+console.log('7. Searching for existence of a value -----------');
+
+values = Array.from( array1.values() );
+
+console.log( values.includes("Melisa") );
+console.log( values.includes("Yeliz") );
+
+// 8. looping
+console.log('8. Looping --------------------------------------');
+
+function foo( key, value ) 
+{
+    console.log( key, value );
+}
+
+for ( let [k, v] of array1.entries() ) 
+    foo( k, v );
+
